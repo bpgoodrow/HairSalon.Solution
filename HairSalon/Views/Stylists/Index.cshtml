@@ -6,6 +6,8 @@
 
 <h1>Stylists</h1>
 
+<hr />
+
 @if (@Model.Count == 0)
 {
   <h3>No stylists have been added yet!</h3>
@@ -15,9 +17,6 @@
   @foreach(Stylist stylist in Model)
   {
     <li>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId }) | @stylist.Description</li>
-      <ul>
-        <li>@stylist.Client.Name</li>
-      </ul>
   }
 </ul>
 
