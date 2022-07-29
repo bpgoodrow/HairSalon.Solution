@@ -42,10 +42,10 @@ namespace HairSalon.Controllers
       return View(thisClient);
     }
 
-    public ActionResult StylistClients(int id)
+    public ActionResult StylistClients()
     {
-      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-      return View(thisClient);
+      List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
+      return View(model);
     }
 
     public ActionResult Edit(int id)
