@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using HairSalon.Models;
 
-namespace Template
+namespace HairSalon
 {
   public class Startup
   {
@@ -23,9 +23,8 @@ namespace Template
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddMvc();
-      // change to correct context file name
       services.AddEntityFrameworkMySql()
-        .AddDbContext<TemplateContext>(options => options
+        .AddDbContext<HairSalonContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 

@@ -6,11 +6,11 @@ using HairSalon.Models;
 
 namespace HairSalon.Controllers
 {
-  public class StylistController : Controller
+  public class StylistsController : Controller
   {
-    private readonly BestRestaurantsContext _db;
+    private readonly HairSalonContext _db;
 
-    public StylistController(BestRestaurantsContext db)
+    public StylistsController(HairSalonContext db)
     {
       _db = db;
     }
